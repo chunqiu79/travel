@@ -1,0 +1,26 @@
+server:
+  # 端口号
+  port: 8082
+
+spring:
+  # 配置controller解析
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates/
+    suffix: .html
+  # 配置数据源
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/travel?characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 123456
+  # 配置静态资源路径
+  web:
+    resources:
+      static-locations: classpath:/static/
+
+# mybatis-plus:
+  # 配置mybatis-plus对应的xml位置
+#  mapper-locations: classpath:/mybatis/**/*.xml
+
+

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+    <!-- 导入原生的bootstrap.css -->
+    <link rel="stylesheet" href="/css/bootstrap/bootstrap.css">
+    <!-- 轮播图css -->
+    <link rel="stylesheet" href="/css/index_carousel.css">
+    <!-- jquery -->
+    <script src="/js/jquery/jquery3.5.1.min.js"></script>
+    <script src="/js/bootstrap/bootstrap.js"></script>
+    <style>
+        .navbar {
+            position: relative;
+            border: 0px solid transparent;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <!-- 导航栏 -->
+        <nav class="navbar navbar-default">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav">
+                        <li><img src="/image/logo.png" width="50" height="50"></li>
+                    </ul>
+                    <form th:action="@{/searchSights}" class="navbar-form navbar-left">
+                        <div class="form-group">
+                            <input type="text" class="form-control" placeholder="长沙">
+                        </div>
+                        <button type="submit" class="btn btn-default">搜索</button>
+                    </form>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li class="active"><a th:href="@{/selectAllSights}">景点</a></li>
+                        <li><a th:href="@{/index}">首页</a></li>
+                        <li><a th:href="@{/userLogin}">您好，请登录</a></li>
+                        <li><a th:href="@{/userRegister}">免费注册</a></li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的旅游<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">我的收藏</a></li>
+                                <li><a href="#">我的优惠券</a></li>
+                                <li><a href="#">我的钱包</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的订单<span class="caret"></span></a>
+                            <ul class="dropdown-menu">
+                                <li><a th:href="@{/order/hotel/${user.id}}">酒店订单</a></li>
+                                <li><a href="#">旅游订单</a></li>
+                                <li><a href="#">全部订单</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <!-- 轮播图 -->
+        <div class="container-fluid">
+            <div class="row-fluid">
+                <div class="page-header"></div>
+                <div class="carousel" id="myCarousel">
+                    <div class="carousel-inner">
+                        <div class="item active">
+                            <div class="bannerImage">
+                                <a th:href="@{/detail/1}"><img src="/image/zjj.png" alt="张家界" width="100%" height="650px"></a>
+                            </div>
+                            <div class="caption row-fluid">
+                                <div class="span4"><h3>张家界</h3>
+                                    <a class="btn btn-mini" th:href="@{/detail/1}">详情</a>
+                                </div>
+                                <div class="span8">
+                                    <p>张家界地域古属朝天山，因明崇祯邑人张再弘“蒙恩赐团官”设衙署于此而得名。也曾称张家界为马鬃岭。1958年建立国营张家界林场。1982年经国务院批准为中国第一个国家森林公园。1992年，《世界自然遗产》；2004年，首批《世界地质公园》；2007年，首批5A级风景区。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="bannerImage">
+                                <a href="#"><img src="/image/fhgc.jpg" alt="凤凰古城" width="100%" height="650px"></a>
+                            </div>
+                            <div class="caption row-fluid">
+                                <div class="span4"><h3>凤凰古城</h3>
+                                    <a class="btn btn-mini" href="#">详情</a>
+                                </div>
+                                <div class="span8">
+                                    <p>凤凰古城与吉首的德夯苗寨、永顺的猛洞河、贵州的梵净山相毗邻，是怀化、吉首、贵州铜仁三地之间的必经之路。是湖南十大文化遗产之一，曾被新西兰作家路易·艾黎称赞为中国最美丽的小城，与云南丽江古城、山西平遥古城媲美，享有“北平遥、南凤凰”之名。是国家历史文化名城，国家AAAA级景区。2019年10月，入选首届“小镇美学榜样”名单。</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="item">
+                            <div class="bannerImage">
+                                <a href="#"><img src="/image/nyhs.jpg" alt="南岳衡山" width="100%" height="650px"></a>
+                            </div>
+                            <div class="caption row-fluid">
+                                <div class="span4"><h3>南岳衡山</h3>
+                                    <a class="btn btn-mini" href="#">详情</a>
+                                </div>
+                                <div class="span8">
+                                    <p>衡山是中国著名的道教、佛教圣地，环山有寺、庙、庵、观200多处。衡山是上古时期君王唐尧、虞舜巡疆狩猎祭祀社稷，夏禹杀马祭天地求治洪方法之地。衡山山神是民间崇拜的火神祝融，他被黄帝委任镇守衡山，教民用火，化育万物，死后葬于衡山赤帝峰，被当地尊称南岳圣帝。道教“三十六洞天，七十二福地”，有四处位于衡山之中，佛祖释迦牟尼两颗真身舍利子藏于衡山南台寺金刚舍利塔中。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="control-box">
+                        <a data-slide="prev" href="#myCarousel" class="carousel-control left">‹</a>
+                        <a data-slide="next" href="#myCarousel" class="carousel-control right">›</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+    <!-- 轮播图js -->
+    <script type="text/javascript" src="/js/index_carousel.js"></script>
+</body>
+</html>
