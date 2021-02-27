@@ -13,13 +13,16 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/travel?characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: 123456
+    password: Wang098752
   # 配置静态资源路径
   web:
     resources:
       static-locations: classpath:/static/
-
-# mybatis-plus:
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+  # mybatis-plus:
   # 配置mybatis-plus对应的xml位置
 #  mapper-locations: classpath:/mybatis/**/*.xml
 

@@ -3,6 +3,7 @@ package com.banksteel.travel.service.impl;
 import com.banksteel.travel.dao.SightDao;
 import com.banksteel.travel.entity.Sight;
 import com.banksteel.travel.service.SightService;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -52,7 +53,9 @@ public class SightServiceImpl implements SightService {
 
     @Override
     public List<Sight> selectSightsByCondition(String condition) {
-        return sightDao.selectList(null);
+        QueryWrapper<Sight> sightWrapper = new QueryWrapper<>();
+        sightWrapper.like("name", condition);
+        return sightDao.selectList(sightWrapper);
     }
 
 }
