@@ -17,8 +17,8 @@ public class SightController {
     SightService sightService;
 
     @RequestMapping(value = "/searchSights", method = RequestMethod.GET)
-    public ModelAndView searchSights(@RequestParam("condition") String condition, Map<String, Object> result) {
-        List<Sight> sights = sightService.selectSightsByCondition(condition);
+    public ModelAndView searchSights(@RequestParam("destination") String destination, Map<String, Object> result) {
+        List<Sight> sights = sightService.selectSightsByCondition(destination);
         result.put("allSights", sights);
         return new ModelAndView("sight", "result", result);
     }

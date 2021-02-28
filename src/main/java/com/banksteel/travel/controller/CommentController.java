@@ -1,9 +1,9 @@
 package com.banksteel.travel.controller;
 
 import com.banksteel.travel.entity.Comment;
-import com.banksteel.travel.entity.Sight;
 import com.banksteel.travel.service.CommentService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import java.util.List;
 import java.util.Map;
 
+@Controller
 public class CommentController {
 
     @Autowired
