@@ -30,6 +30,13 @@ public class SightController {
         return new ModelAndView("sight", "result", result);
     }
 
+    @RequestMapping(value = "/carousel", method = RequestMethod.GET)
+    public ModelAndView carousel(Map<String, Object> result) {
+        List<Sight> allSights = sightService.selectSightsByCondition(null);
+        result.put("allSights", allSights);
+        return new ModelAndView("carousel", "result", result);
+    }
+
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     public ModelAndView detail(@PathVariable("id") Integer id, Map<String, Object> result) {
         Sight sight = sightService.selectSightById(id);

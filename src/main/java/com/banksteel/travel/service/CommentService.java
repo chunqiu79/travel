@@ -15,6 +15,8 @@ public interface CommentService {
 
     Comment selectCommentById(Integer id);
 
-    List<City> selectCommentsByCondition(String condition);
+    List<Comment> selectCommentsBySightId(Integer id);
+
+    List<Comment> selectCommentsByCondition(String condition);
 
 }

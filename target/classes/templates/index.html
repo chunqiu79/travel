@@ -12,24 +12,38 @@
             <li class="layui-nav-item">
                 <img src="/image/logo.png" th:width="50px" th:height="50px">
             </li>
-            <li class="layui-nav-item"><a th:href="@{/index}">首页</a></li>
-            <li class="layui-nav-item"><a th:href="@{/selectAllSights}">景点</a></li>
-            <li class="layui-nav-item"><a href="">大数据</a></li>
             <li class="layui-nav-item">
-                <a href="javascript:;">解决方案</a>
+                <a th:href="@{/index}">首页</a>
+            </li>
+            <li class="layui-nav-item">
+                <a th:href="@{/selectAllSights}">景点</a>
+            </li>
+            <li class="layui-nav-item">
+                <a href="javascript:;">旅游</a>
                 <dl class="layui-nav-child">
-                    <dd><a href="#">移动模块</a></dd>
-                    <dd><a href="#">后台模版</a></dd>
-                    <dd><a href="#">电商平台</a></dd>
+                    <dd><a href="#">自由行</a></dd>
+                    <dd><a href="#">跟团游</a></dd>
                 </dl>
             </li>
-            <li class="layui-nav-item"><a href="">社区</a></li>
-        </ul>
-        <!--<ul class="layui-nav">
             <li class="layui-nav-item">
-                <input type="text">
+                <a href="javascript:;">交通</a>
+                <dl class="layui-nav-child">
+                    <dd><a href="#">火车票</a></dd>
+                    <dd><a href="#">高铁票</a></dd>
+                    <dd><a href="#">飞机票</a></dd>
+                </dl>
             </li>
-        </ul>-->
+            <li class="layui-nav-item">
+                <form class="layui-form" action="" lay-filter="example">
+                    <div class="layui-form-item">
+                        <div class="layui-input-inline">
+                            <input type="tel" name="phone" autocomplete="off" class="layui-input" placeholder="目的地">
+                        </div>
+                        <button type="button" class="layui-btn layui-btn-normal">搜索</button>
+                    </div>
+                </form>
+            </li>
+        </ul>
         <ul class="layui-nav layui-layout-right">
             <li class="layui-nav-item">
                 <a href="">我的消息<span class="layui-badge">9</span></a>
@@ -43,17 +57,17 @@
                 </dl>
             </li>
             <li class="layui-nav-item">
-                <a href=""><img src="//t.cn/RCzsdCq" class="layui-nav-img">我</a>
+                <a href=""><img th:src="@{/image/01.jpg}" class="layui-nav-img">我</a>
                 <dl class="layui-nav-child">
                     <dd><a href="javascript:;">修改信息</a></dd>
                     <dd><a href="javascript:;">安全管理</a></dd>
-                    <dd><a href="javascript:;">退了</a></dd>
+                    <dd><a href="javascript:;">退出登录</a></dd>
                 </dl>
             </li>
         </ul>
     </div>
     <div class="layui-body">
-        <iframe src="" id="main" height="100%" width="100%"></iframe>
+        <iframe src="/carousel" id="main" height="100%" width="100%"></iframe>
     </div>
 
     <div class="layui-footer">

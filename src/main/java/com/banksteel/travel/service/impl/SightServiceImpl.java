@@ -54,7 +54,6 @@ public class SightServiceImpl implements SightService {
     @Override
     public List<Sight> selectSightsByCondition(String condition) {
         QueryWrapper<Sight> sightWrapper = new QueryWrapper<>();
-        sightWrapper.like("name", condition);
         return sightDao.selectList(sightWrapper);
     }
 
